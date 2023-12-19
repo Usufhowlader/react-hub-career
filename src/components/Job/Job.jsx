@@ -1,7 +1,8 @@
 import { MdLocationOn } from "react-icons/md";
 import { BiSolidDollarCircle } from "react-icons/bi";
+import { Link } from "react-router-dom";
 const Job = ({job}) => {
-    const {logo,job_title,company_name,remote_or_onsite,job_type,location,salary}=job;
+    const {id,logo,job_title,company_name,remote_or_onsite,job_type,location,salary}=job;
     return (
         <div className="my-8">
             <div className="card card-compact  bg-gray-200 ">
@@ -18,7 +19,9 @@ const Job = ({job}) => {
        <h2 className="flex items-center">< BiSolidDollarCircle className="text-3xl mr-4"></ BiSolidDollarCircle>{salary}</h2>
     </div>
     <div className="card-actions ">
+      <Link to={`/job/${id}`}>
       <button className="btn bg-[#9873FF]">View Details</button>
+      </Link>
     </div>
   </div>
 </div>
